@@ -5,5 +5,7 @@
       dnf: update_cache=yes
       changed_when: False
   
-  tasks:   
+  tasks:
+     - include: tasks/users.yml
+     - include: tasks/cron.yml   
      - include: tasks/remove.yml
