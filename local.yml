@@ -37,9 +37,7 @@
       state: absent   
   - name: Remove Spotify
     become: yes
-    package:
-      name: spotify
-      state: absent
+    command: flatpak uninstall --assumeyes flathub com.spotify.Client
   - name: Remove Firefox
     become: yes
     package:
