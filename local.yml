@@ -1,9 +1,47 @@
 - hosts: localhost
   tasks:
-    - name: Enable Flathub repository
-      become: yes
-      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-    - name: Install Spotify
-      become: yes
-      command: flatpak install --assumeyes flathub com.spotify.Client
+  - name: Remove Rhythmbox
+    become: yes
+    package:
+      name: rhythmbox
+      state: absent
+  - name: Remove Contacts
+    become: yes
+    package:
+      name: contacts
+      state: absent
+  - name: Remove Weather
+    become: yes
+    package:
+      name: weather
+      state: absent
+  - name: Remove Maps
+    become: yes
+    package:
+      name: maps
+      state: absent
+  - name: Remove GNOME Boxes
+    become: yes
+    package:
+      name: gnome-boxes
+      state: absent
+  - name: Remove Text Editor
+    become: yes
+    package:
+      name: text-editor
+      state: absent
+  - name: Remove Cheese
+    become: yes
+    package:
+      name: cheese
+      state: absent   
+  - name: Remove Spotify
+    become: yes
+    package:
+      name: spotify
+      state: absent
+  - name: Remove Firefox
+    become: yes
+    package:
+      name: firefox
+      state: absent
