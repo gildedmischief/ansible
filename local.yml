@@ -1,7 +1,8 @@
 - hosts: localhost 
   become: true
-  tasks:
+   pre_tasks:
     name: Update Repositories
     dnf: update_cache=yes
     changed_when: False
+   tasks:   
     include: tasks/packages.yml
