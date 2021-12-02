@@ -1,6 +1,6 @@
 - hosts: localhost
+  become: true
   pre_tasks:
-    become: yes
     name: Update Repositories
     dnf: update_cache=yes
     changed_when: False

@@ -1,6 +1,4 @@
-- hosts: localhost
-  tasks:
-  - name: Remove Rhythmbox
+  - name: Remove Rythmbox 
     become: yes
     package:
       name: rhythmbox
