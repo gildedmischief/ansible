@@ -6,4 +6,4 @@
       changed_when: False
   
   tasks:   
-     - include: home/rayweatherford/ansible/ansible/tasks/packages.yml
+     - include: tasks/remove.yml
