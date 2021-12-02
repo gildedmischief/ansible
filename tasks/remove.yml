@@ -1,0 +1,42 @@
+- hosts: localhost
+  tasks:
+  - name: Remove Rhythmbox
+    become: yes
+    package:
+      name: rhythmbox
+      state: absent
+  - name: Remove Contacts
+    become: yes
+    package:
+      name: contacts
+      state: absent
+  - name: Remove Weather
+    become: yes
+    package:
+      name: weather
+      state: absent
+  - name: Remove Maps
+    become: yes
+    package:
+      name: maps
+      state: absent
+  - name: Remove GNOME Boxes
+    become: yes
+    package:
+      name: gnome-boxes
+      state: absent
+  - name: Remove Text Editor
+    become: yes
+    package:
+      name: gedit 
+      state: absent
+  - name: Remove Cheese
+    become: yes
+    package:
+      name: cheese
+      state: absent   
+  - name: Remove Firefox
+    become: yes
+    package:
+      name: firefox
+      state: absent

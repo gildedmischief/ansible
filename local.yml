@@ -1,45 +1,8 @@
 - hosts: localhost
+  become: yes
+  pre_tasks:
+    name: Update Repositories
+    command: dnf update_cache=yes
+    changed_when: False
   tasks:
-  - name: Remove Rhythmbox
-    become: yes
-    package:
-      name: rhythmbox
-      state: absent
-  - name: Remove Contacts
-    become: yes
-    package:
-      name: contacts
-      state: absent
-  - name: Remove Weather
-    become: yes
-    package:
-      name: weather
-      state: absent
-  - name: Remove Maps
-    become: yes
-    package:
-      name: maps
-      state: absent
-  - name: Remove GNOME Boxes
-    become: yes
-    package:
-      name: gnome-boxes
-      state: absent
-  - name: Remove Text Editor
-    become: yes
-    package:
-      name: text-editor
-      state: absent
-  - name: Remove Cheese
-    become: yes
-    package:
-      name: cheese
-      state: absent   
-  - name: Remove Spotify
-    become: yes
-    command: flatpak uninstall --assumeyes flathub com.spotify.Client
-  - name: Remove Firefox
-    become: yes
-    package:
-      name: firefox
-      state: absent
+    include: tasks/packages.yml
