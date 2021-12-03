@@ -1,0 +1,9 @@
+[Unit]
+Description=Run ansible-pull at 1 minute intervals to check for changes in the repository
+Requires=ansible-repository-check.service
+
+[Timer]
+Unit=ansible-repository-check.service
+OnUnitActiveSec=60s
+[Install]
+WantedBy=timers.target
