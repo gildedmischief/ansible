@@ -1,0 +1,11 @@
+[Unit]
+Description=Logs system statistics to the systemd journal
+Wants=monitor.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/free
+ExecStart=/usr/bin/lsblk
+
+[Install]
+WantedBy=multi-user.target
