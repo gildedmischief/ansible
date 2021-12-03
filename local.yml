@@ -7,4 +7,3 @@
   
   tasks:
     - include: tasks/remove.yml
-    - include: tasks/gnome.yml
