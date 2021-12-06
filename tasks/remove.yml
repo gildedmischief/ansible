@@ -1,40 +1,35 @@
-  - name: Remove Rythmbox 
-    become: yes
-    package:
+  - name: Remove Rythmbox
+    community.general.pacman: 
       name: rhythmbox
       state: absent
+      force: yes
   - name: Remove Contacts
-    become: yes
-    package:
+    community.general.pacman:
       name: contacts
       state: absent
+      force: yes
   - name: Remove Weather
-    become: yes
-    package:
+    community.general.pacman:
       name: weather
       state: absent
+      force: yes
   - name: Remove Maps
-    become: yes
-    package:
+    community.general.pacman:
       name: maps
       state: absent
-  - name: Remove GNOME Boxes
-    become: yes
-    package:
-      name: gnome-boxes
-      state: absent
+      force: yes
   - name: Remove Text Editor
-    become: yes
-    package:
+    community.general.pacman:
       name: gedit 
       state: absent
+      force: yes
   - name: Remove Cheese
-    become: yes
-    package:
+    community.general.pacman:
       name: cheese
-      state: absent   
+      state: absent
+      force: yes
   - name: Remove Firefox
-    become: yes
-    package:
+    community.general.pacman:
       name: firefox
       state: absent
+      force: yes

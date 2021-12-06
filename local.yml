@@ -2,8 +2,8 @@
   become: true
   pre_tasks: 
     - name: Update Repositories
-      dnf: update_cache=yes
-      changed_when: False
+      community.general.pacman:
+        update_cache: yes
   
   tasks:
     - include: tasks/remove.yml
