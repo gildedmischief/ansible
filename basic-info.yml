@@ -1,4 +1,4 @@
-- name: Checks the uptime and disk usage of the host.
+- name: Checks the uptime, disk usage, CPU, and OS of the host.
   hosts: all
   tasks:
     - name: Uptime check
@@ -15,5 +15,11 @@
     - debug: 
         var: dfout.stdout_lines
 
-    - name: WiFi signal strength
-      command: "iwconfig wlan0 | grep -i --color quality"
+    - name: CPU
+      debug:
+        msg: "{{ansible_processor}}"
+
+    - name: OS
+      debug:
+        msg: "{{ansible_distribution}}"
+        msg: "{{ansible_bios_version}}"
