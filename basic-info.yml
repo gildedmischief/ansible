@@ -22,4 +22,7 @@
     - name: OS
       debug:
         msg: "{{ansible_distribution}}"
+
+    - name: Version
+      debug:
         msg: "{{ansible_bios_version}}"
