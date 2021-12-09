@@ -14,3 +14,6 @@
 
     - debug: 
         var: dfout.stdout_lines
+
+    - name: WiFi signal strength
+      command: "iwconfig wlan0 | grep -i --color quality"
