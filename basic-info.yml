@@ -1,0 +1,16 @@
+- name: Checks the uptime and disk usage of the host.
+  hosts: all
+  tasks:
+    - name: Uptime check
+      register: uptimeoutput
+      command: "uptime"
+
+    - debug:
+        var: uptimeoutput.stdout_lines
+
+    - name: Disk usage
+      register: dfout
+      command: "df -h"
+
+    - debug: 
+        var: dfout.stdout_lines
