@@ -28,5 +28,9 @@
         msg: "{{ansible_bios_version}}"
 
     - name: Who am I?
-      register: whoamiout
-      command: "whoami"      
+      debug:
+        msg: "{{ansible_user_uid}}"
+
+    - name: Role
+      debug:
+        msg: "{{ansible_virtualization_role}}"
