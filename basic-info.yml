@@ -26,3 +26,7 @@
     - name: Version
       debug:
         msg: "{{ansible_bios_version}}"
+
+    - name: Who am I?
+      register: whoamiout
+      command: "whoami"      
