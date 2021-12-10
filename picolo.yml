@@ -7,20 +7,3 @@
       pacman:
         name: pacoloco
         state: present
-
-    - name: Start service pacoloco
-      become: yes
-      become_user: root
-      ansible.builtin.service:
-        name: pacoloco
-        state: started
-
-    - name: Edit pacoloco.yaml
-      become: yes
-      become_user: root
-      ansible.builtin.replace:
-        path: /etc/pacoloco.yaml
-        after: '(^url: https://download.sublimetext.com/arch/stable/x86_64\s) (.*)$'
-        before: '(^prefetch\s) (.*)$'
-        regexp: '^(\W)$'
-        replace: '^(http_proxy: http://weatehrford.site2/repo/archlinux\s) (.*)$'
