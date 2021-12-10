@@ -1,0 +1,21 @@
+- name: Install Pacoloco
+  hosts: test
+  become: yes
+  tasks:
+    - name: Install
+      pacman:
+        name: pacoloco
+        state: present
+
+    - name: Start service pacoloco
+      ansible.builtin.service:
+        name: pacoloco
+        state: started
+
+    - name: Edit pacoloco.yaml
+      ansible.builtin.replace:
+        path: /etc/pacoloco.yaml
+        after: '(^url: https://download.sublimetext.com/arch/stable/x86_64\s) (.*)$'
+        before: '(^prefetch\s) (.*)$'
+        regexp: '^(\W)$'
+        replace: '^(http_proxy: http://weatehrford.site2/repo/archlinux\s) (.*)$'
