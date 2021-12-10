@@ -1,5 +1,5 @@
 - name: Checks the uptime, disk usage, CPU, and OS of the host.
-  hosts: all
+  hosts: test
   tasks:
     - name: Uptime check
       register: uptimeoutput
