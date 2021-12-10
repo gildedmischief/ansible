@@ -1,7 +1,10 @@
 - name: Install Pacoloco
   hosts: test
-  become_user: root
+  become: yes
   tasks:
+    - name: Who am I?
+      debug:
+        msg: "{{ansible_user_id}}"
     - name: Install
       pacman:
         name: pacoloco
