@@ -1,9 +1,8 @@
 - name: Install Pacoloco
   hosts: test
+  become: yes
   tasks:
     - name: Install
-      become: yes
-      become_user: root
       pacman:
         name: pacoloco
         state: present
