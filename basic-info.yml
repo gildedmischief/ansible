@@ -29,7 +29,7 @@
 
     - name: Who am I?
       debug:
-        msg: "{{ansible_user_uid}}"
+        msg: "{{ansible_user_id}}"
 
     - name: Role
       debug:
