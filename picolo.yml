@@ -5,7 +5,8 @@
     - name: Who am I?
       debug:
         msg: "{{ansible_user_id}}"
-    - name: Install
-      pacman:
-        name: pacoloco
-        state: present
+       
+#    - name: Install
+#      pacman:
+#       name: pacoloco
+#        state: present
