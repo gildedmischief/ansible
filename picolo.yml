@@ -1,6 +1,6 @@
 - name: Install Pacoloco
   hosts: test
-  become: yes
+  become_user: root
   tasks:
     - name: Install
       pacman:
