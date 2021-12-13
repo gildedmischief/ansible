@@ -10,3 +10,22 @@
       pacman:
        name: pacoloco
        state: present
+
+    - name: Configuration
+      ansible.builtin.systemd:
+        state: started
+        name: pacoloco
+
+      copy: 
+       src: ~/ansible/files/pacoloco.yaml
+       dest: /etc/pacoloco.yaml
+       owner: root
+       group: root
+       mode: 0644
+
+      copy:
+        src: ~/ansible/files/pacman.conf
+        dest: /etc/pacman.conf
+        owner: root
+        group: root
+        mode: 0644
