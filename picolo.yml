@@ -33,4 +33,4 @@
         mode: 0644
 
     - name: Append proxy server to mirror list
-      command: "echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist
+      command: "echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist"
