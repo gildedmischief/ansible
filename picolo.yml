@@ -11,10 +11,10 @@
           # name: pacoloco
           # state: present
 
-    - name: Start pacoloco service
-      ansible.builtin.systemd:
-        state: started
-        name: pacoloco
+          # - name: Start pacoloco service
+          # ansible.builtin.systemd:
+          # state: started
+          # name: pacoloco
 
     - name: Copy files
       copy:
@@ -33,4 +33,4 @@
         mode: 0644
 
     - name: Append proxy server to mirror list
-      command: "/etc/pacman.d/mirrorlist > echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch'"
+      command: "echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist"
