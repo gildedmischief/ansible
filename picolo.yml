@@ -16,18 +16,10 @@
         state: started
         name: pacoloco
 
-    - name: Copy files 
-       copy: 
+    - name: Copy files
+      copy:
         src: ~/ansible/files/pacoloco.yaml
         dest: /etc/pacoloco.yaml
-        owner: root
-        group: root
-        mode: 0644
-
-    - name: Copy files    
-       copy:
-        src: ~/ansible/files/pacman.conf
-        dest: /etc/pacman.conf
         owner: root
         group: root
         mode: 0644
