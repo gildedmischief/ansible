@@ -23,3 +23,11 @@
         owner: root
         group: root
         mode: 0644
+
+    - name: Copy more files
+      copy:
+      src: ~/ansible/files/pacman.conf
+      dest: /etc/pacman.conf
+      owner: root
+      group: root
+      mode: 0644
