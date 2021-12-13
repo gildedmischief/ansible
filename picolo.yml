@@ -5,11 +5,11 @@
     - name: Who am I?
       debug:
         msg: "{{ansible_user_id}}"
-       
-          # - name: Install
-          # pacman:
-          # name: pacoloco
-          # state: present
+
+    - name: Install
+      pacman:
+        name: pacoloco
+        state: present
 
           # - name: Start pacoloco service
           # ansible.builtin.systemd:
@@ -32,5 +32,10 @@
         group: root
         mode: 0644
 
-    - name: Append proxy server to mirror list
-      command: "sh -c \"echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist\""
+          # - name: Append proxy server to mirror list
+          # command: "sh -c \"echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist\""
+    - name: Creating mirrorlist
+      copy:
+        dest: "/etc/pacman.d/mirrorlist"
+        content: |
+          Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch
