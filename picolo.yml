@@ -6,10 +6,10 @@
       debug:
         msg: "{{ansible_user_id}}"
        
-    - name: Install
-      pacman:
-       name: pacoloco
-       state: present
+          # - name: Install
+          # pacman:
+          # name: pacoloco
+          # state: present
 
     - name: Start pacoloco service
       ansible.builtin.systemd:
@@ -33,4 +33,4 @@
         mode: 0644
 
     - name: Append proxy server to mirror list
-      command: "echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist"
+      command: "/etc/pacman.d/mirrorlist > echo 'Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch'"
