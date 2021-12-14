@@ -1,10 +1,10 @@
-- hosts: test 
+- hosts: localhost 
   become: yes
   pre_tasks: 
     - name: Update Repositories
       community.general.pacman:
         update_cache: yes
   
-  tasks:
-    - include: tasks/remove.yml
-    - include: tasks/basic-info.yml
+  include_tasks:
+    - tasks/remove.yml
+    - tasks/basic-info.yml
