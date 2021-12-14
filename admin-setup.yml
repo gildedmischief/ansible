@@ -14,14 +14,14 @@
 
   - name: Setup | authorized key upload
     authorized_key: "user={{ createuser }}"
-      key: "{{ lookup('file', 'id_rsa.pub') }}"
-      path: "/home/{{ createuser }}/.ssh/authorized_keys"
-      manage_dir: no
+    key: "{{ lookup('file', 'id_rsa.pub') }}"
+    path: "/home/{{ createuser }}/.ssh/authorized_keys"
+    manage_dir: no
     sudo: true
      
   - name: Sudoers | update sudoers file and validate
     lineinfile: 
-      dest: /etc/sudoers
+      path: /etc/sudoers
       insertafter: EOF
       line: "{{ createuser }} ALL=(ALL) NOPASSWD: ALL"
       regexp: "{{ createuser }} ALL=(ALL) NOPASSWD: ALL"
