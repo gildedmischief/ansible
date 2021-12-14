@@ -1,36 +1,29 @@
-- name: Checks the uptime, disk usage, CPU, and OS of the host.
-  hosts: test
-  tasks:
-    - name: Uptime check
-      register: uptimeoutput
-      command: "uptime"
+- name: Uptime check
+  register: uptimeoutput
+  command: "uptime"
 
-    - debug:
-        var: uptimeoutput.stdout_lines
+- debug:
+  var: uptimeoutput.stdout_lines
 
-    - name: Disk usage
-      register: dfout
-      command: "df -h"
+- name: Disk usage
+  register: dfout
+  command: "df -h"
 
-    - debug: 
-        var: dfout.stdout_lines
+- debug: 
+  var: dfout.stdout_lines
 
-    - name: CPU
-      debug:
-        msg: "{{ansible_processor}}"
+- name: CPU
+  debug:
+    msg: "{{ansible_processor}}"
 
-    - name: OS
-      debug:
-        msg: "{{ansible_distribution}}"
+- name: OS
+  debug:
+    msg: "{{ansible_distribution}}"
 
-    - name: Version
-      debug:
-        msg: "{{ansible_bios_version}}"
+- name: Version
+  debug:
+    msg: "{{ansible_bios_version}}"
 
-    - name: Who am I?
-      debug:
-        msg: "{{ansible_user_id}}"
-
-    - name: Role
-      debug:
-        msg: "{{ansible_virtualization_role}}"
+- name: Who am I?
+  debug:
+    msg: "{{ansible_user_id}}"
