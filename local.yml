@@ -5,5 +5,5 @@
       community.general.pacman:
         update_cache: yes
   
-  include_tasks:
-    - tasks/remove.yml
+  tasks:
+    - include_tasks: tasks/remove.yml
