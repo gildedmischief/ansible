@@ -7,4 +7,3 @@
   
   include_tasks:
     - tasks/remove.yml
-    - tasks/basic-info.yml
