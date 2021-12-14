@@ -14,7 +14,7 @@
 
   - name: Setup | authorized key upload
     become: yes
-    authorized_key: "user={{ createuser }}"
+    authorized_key: user="{{ createuser }}"
     key: "{{ lookup('file', 'id_rsa.pub') }}"
     path: "/home/{{ createuser }}/.ssh/authorized_keys"
     manage_dir: no
