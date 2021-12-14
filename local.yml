@@ -1,5 +1,5 @@
-- hosts: localhost 
-  become: true
+- hosts: test 
+  become: yes
   pre_tasks: 
     - name: Update Repositories
       community.general.pacman:
@@ -7,3 +7,4 @@
   
   tasks:
     - include: tasks/remove.yml
+    - include: tasks/basic-info.yml
