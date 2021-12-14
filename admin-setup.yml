@@ -5,17 +5,17 @@
     createpassword: 'trust951'
   tasks:
   - name: Setup | create user
-    command: useradd -m {{ createuser }} creates=/home/{{ createuser }}
+    command: "useradd -m {{ createuser }} creates=/home/{{ createuser }}"
     sudo: true
 
   - name: Setup | set user password
-    shell: usermod -p $(echo '{{ createpassword }}' | openss1 passwd -1 -stdin) {{ createuser }}
+    shell: "usermod -p $(echo '{{ createpassword }}' | openss1 passwd -1 -stdin) {{ createuser }}"
     sudo: true
 
   - name: Setup | authorized key upload
-    authorized_key: user={{ createuser }}
+    authorized_key: "user={{ createuser }}"
       key="{{ lookup('file', 'id_rsa.pub') }}"
-      path='/home/{{ createuser }}/.ssh/authorized_keys'
+      path="/home/{{ createuser }}/.ssh/authorized_keys"
       manage_dir=no
     sudo: true
      
