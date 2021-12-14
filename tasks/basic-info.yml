@@ -3,14 +3,14 @@
   command: "uptime"
 
 - debug:
-  var: uptimeoutput.stdout_lines
+    var: uptimeoutput.stdout_lines
 
 - name: Disk usage
   register: dfout
   command: "df -h"
 
 - debug: 
-  var: dfout.stdout_lines
+    var: dfout.stdout_lines
 
 - name: CPU
   debug:
