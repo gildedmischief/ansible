@@ -1,0 +1,4 @@
+ansible_user: ray
+ansible_ssh_pass: trust951
+ansible_become_pass: trust951
+
