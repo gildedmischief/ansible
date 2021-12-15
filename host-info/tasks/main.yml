@@ -1,0 +1,22 @@
+---
+- name: Uptime check
+  register: uptimeoutput
+  command: "uptime"
+
+- debug:
+    var: uptimeoutput.stdout_lines
+
+- name: Disk usage
+  register: dfout
+  command: "df -h"
+
+- debug: 
+    var: dfout.stdout_lines
+
+- name: CPU
+  debug:
+    msg: "{{ansible_processor}}"
+
+- name: OS
+  debug:
+    msg: "{{ansible_distribution}}"
