@@ -1,0 +1,27 @@
+---
+- name: Install
+  pacman:
+    name: pacoloco
+    state: present
+
+- name: Copy files
+  copy:
+    src: ~/ansible/files/pacoloco.yaml
+    dest: /etc/pacoloco.yaml
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Copy more files
+  copy:
+    src: ~/ansible/files/pacman.conf
+    dest: /etc/pacman.conf
+    owner: root
+    group: root
+    mode: 0644   
+
+- name: Creating mirrorlist
+  copy:
+    dest: "/etc/pacman.d/mirrorlist"
+    content: |
+      Server = http://weatherford.site2:9129/repo/archlinux/$repo/os/$arch
