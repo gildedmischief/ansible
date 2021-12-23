@@ -1,0 +1,14 @@
+- name: Playbook to update brave and cache
+  hosts: all
+  tasks:
+    - name: Updates brave to latest version
+      kewlfft.aur.aur:
+        name: brave
+        use: auto
+        state: latest
+      become: yes
+      become_user: admin
+
+    - name: Update cache
+      community.general.pacman:
+        update_cache: yes
