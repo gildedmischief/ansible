@@ -1,0 +1,10 @@
+- name: Create an admin user to run sudo pacman without password
+  hosts: all
+  tasks:
+  - name: Allow the admin user to run sudo pacman without password
+    become: yes
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/admin
+      line: 'admin ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+      create: yes
+      validate: 'visudo -cf %s'
